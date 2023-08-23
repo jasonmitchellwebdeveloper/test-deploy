@@ -20,4 +20,4 @@ jobs:
         port: 21
         username: ${{ secrets.FTP_STAGING_USERNAME }}
         password: ${{ secrets.FTP_STAGING_PASSWORD }}
-        publish_dir: ./dist
+        publish-dir: dist/
