@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build App
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Install Dependencies
         run: npm install
@@ -21,8 +21,8 @@ jobs:
         run: ls
   deploy:
     name: Deploy App
-    runs-on: [ubuntu-latest]
-    needs: [build]
+    runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Download bundle
         uses: actions/download-artifact@master
