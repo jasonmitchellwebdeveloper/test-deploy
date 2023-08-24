@@ -21,5 +21,4 @@ jobs:
         password: ${{ secrets.FTP_STAGING_PASSWORD }}
         host: ${{ secrets.FTP_SERVER }}
         path: dist
-        into: web
         cleanupExisting: true
