@@ -4,21 +4,22 @@ on:
       - staging
 name: 🚀 Deploy to staging site
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v3
+      uses: actions/checkout@master
     - name: 🚚 Init Astro
       run: npm install
     - name: Run Build
       run: npm run build
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Deploy App Files
+      uses: isthatcentered/dist-to-ftp@master
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        port: 21
         username: ${{ secrets.FTP_STAGING_USERNAME }}
         password: ${{ secrets.FTP_STAGING_PASSWORD }}
-        publish-dir: dist/
+        host: ${{ secrets.FTP_SERVER }}
+        path: dist
+        into: web
+        cleanupExisting: true
