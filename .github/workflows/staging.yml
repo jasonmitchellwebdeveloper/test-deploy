@@ -1,4 +1,4 @@
-name: Deploy app to dist
+name: Deploy site to staging
 on:
   push:
     branches:
