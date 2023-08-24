@@ -1,0 +1,22 @@
+---
+// This is Astro's frontmatter
+// here you can write regular JavaScript or TypeScript
+// It will only run on the server and never executes client-side
+import Food from "../components/Food.vue";
+
+const title = "Hello World!";
+---
+
+<html>
+  <head>
+    <!-- Astro uses a JSX-like syntax in it's body -->
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <h1>Food I like:</h1>
+      <!-- let's render our food items -->
+      <Food />
+    </main>
+  </body>
+</html>
